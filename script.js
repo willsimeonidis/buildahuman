@@ -56,39 +56,46 @@ function getHumanSVG(gender) {
     const shortsColor = "#2ecc71";
 
     return `
-    <svg id="human-svg" width="300" height="400" viewBox="0 0 300 400">
-        <!-- BODY GROUP -->
-        <g id="body-group" transform="translate(150,200)">
-            <!-- Torso -->
-            <rect id="torso" x="-40" y="-40" width="80" height="120" fill="${shirtColor}" rx="20" />
-            <!-- Neck -->
-            <rect id="neck" x="-15" y="-60" width="30" height="20" fill="${skinColor}" rx="10" />
-            <!-- Head -->
-            <circle id="head" cx="0" cy="-100" r="40" fill="${skinColor}" />
-            <!-- Hair -->
-            <path id="hair" d="M -40 -110 Q 0 -150 40 -110 Q 0 -130 -40 -110" fill="${hairColor}" />
+    <svg id="human-svg" width="100%" height="100%" viewBox="0 0 300 500" style="overflow: visible;">
+        <g id="body-group" transform="translate(150,250)">
+            
+            <!-- HEAD -->
+            <circle id="head" cx="0" cy="-120" r="45" fill="${skinColor}" />
 
-            <!-- Eyes -->
-            <circle id="eye-left" cx="-15" cy="-105" r="5" fill="#000" />
-            <circle id="eye-right" cx="15" cy="-105" r="5" fill="#000" />
+            <!-- HAIR -->
+            <path id="hair" d="M -45 -130 Q 0 -170 45 -130 Q 0 -150 -45 -130" fill="${hairColor}" />
 
-            <!-- Mouth -->
-            <path id="mouth" d="M -15 -85 Q 0 -75 15 -85" stroke="#b0413e" stroke-width="3" fill="none" />
+            <!-- EYES -->
+            <circle id="eye-left" cx="-18" cy="-125" r="6" fill="#000" />
+            <circle id="eye-right" cx="18" cy="-125" r="6" fill="#000" />
 
-            <!-- Arms -->
-            <rect id="arm-left" x="-60" y="-40" width="20" height="90" fill="${skinColor}" rx="10" />
-            <rect id="arm-right" x="40" y="-40" width="20" height="90" fill="${skinColor}" rx="10" />
+            <!-- MOUTH -->
+            <path id="mouth" d="M -20 -95 Q 0 -85 20 -95" stroke="#b0413e" stroke-width="4" fill="none" />
 
-            <!-- Legs -->
-            <rect id="leg-left" x="-25" y="80" width="20" height="90" fill="${shortsColor}" rx="10" />
-            <rect id="leg-right" x="5" y="80" width="20" height="90" fill="${shortsColor}" rx="10" />
+            <!-- NECK -->
+            <rect id="neck" x="-15" y="-90" width="30" height="25" fill="${skinColor}" rx="10" />
 
-            <!-- Base clothing (always on, appropriate) -->
-            <rect id="underwear" x="-30" y="40" width="60" height="40" fill="#ffffff" rx="10" />
+            <!-- TORSO -->
+            <rect id="torso" x="-45" y="-65" width="90" height="140" fill="${shirtColor}" rx="25" />
+
+            <!-- ARMS -->
+            <rect id="arm-left" x="-70" y="-65" width="25" height="120" fill="${skinColor}" rx="12" />
+            <rect id="arm-right" x="45" y="-65" width="25" height="120" fill="${skinColor}" rx="12" />
+
+            <!-- SHORTS -->
+            <rect id="shorts" x="-40" y="75" width="80" height="50" fill="${shortsColor}" rx="15" />
+
+            <!-- LEGS -->
+            <rect id="leg-left" x="-30" y="125" width="25" height="120" fill="${skinColor}" rx="12" />
+            <rect id="leg-right" x="5" y="125" width="25" height="120" fill="${skinColor}" rx="12" />
+
+            <!-- BASE UNDERWEAR (NOW FIXED + LOWERED) -->
+            <rect id="underwear" x="-35" y="60" width="70" height="40" fill="#ffffff" rx="10" />
         </g>
     </svg>
     `;
 }
+
 
 function renderHuman() {
     characterContainer.innerHTML = getHumanSVG(currentGender);
