@@ -6,6 +6,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#character-container svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 body {
     background: #f3f3f3;
     color: #333;
