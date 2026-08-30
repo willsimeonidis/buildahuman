@@ -1,1 +1,237 @@
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+body {
+    background: #f3f3f3;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* NEUMORPHISM BASE */
+.neu {
+    background: #f3f3f3;
+    border-radius: 12px;
+    box-shadow: 
+        6px 6px 12px #d1d1d1,
+        -6px -6px 12px #ffffff;
+}
+
+.neu-inset {
+    background: #f3f3f3;
+    border-radius: 12px;
+    box-shadow:
+        inset 6px 6px 12px #d1d1d1,
+        inset -6px -6px 12px #ffffff;
+}
+
+/* TOP BAR */
+#top-bar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+#top-bar button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 12px;
+    background: #f3f3f3;
+    box-shadow:
+        6px 6px 12px #d1d1d1,
+        -6px -6px 12px #ffffff;
+    transition: 0.2s;
+}
+
+#top-bar button:hover {
+    box-shadow:
+        3px 3px 6px #d1d1d1,
+        -3px -3px 6px #ffffff;
+}
+
+#gender-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+#gender-toggle button.active {
+    background: #e0e0e0;
+}
+
+/* MAIN LAYOUT */
+#main-container {
+    display: flex;
+    height: calc(100vh - 70px);
+}
+
+/* LEFT SIDE: CHARACTER AREA */
+#character-area {
+    width: 65%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#character-container {
+    width: 80%;
+    height: 90%;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow:
+        10px 10px 20px #d1d1d1,
+        -10px -10px 20px #ffffff;
+}
+
+/* CAMERA CONTROLS */
+#camera-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#camera-controls button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    background: #f3f3f3;
+    box-shadow:
+        6px 6px 12px #d1d1d1,
+        -6px -6px 12px #ffffff;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+#camera-controls button:hover {
+    box-shadow:
+        3px 3px 6px #d1d1d1,
+        -3px -3px 6px #ffffff;
+}
+
+/* RIGHT SIDE: SETTINGS PANEL */
+#settings-panel {
+    width: 35%;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f3f3f3;
+}
+
+/* CATEGORY TABS */
+#category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    background: #f3f3f3;
+    box-shadow:
+        6px 6px 12px #d1d1d1,
+        -6px -6px 12px #ffffff;
+    transition: 0.2s;
+}
+
+.tab-btn:hover {
+    box-shadow:
+        3px 3px 6px #d1d1d1,
+        -3px -3px 6px #ffffff;
+}
+
+.tab-btn.active {
+    background: #e0e0e0;
+}
+
+/* CATEGORY CONTENT */
+#category-content {
+    background: #f3f3f3;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow:
+        inset 6px 6px 12px #d1d1d1,
+        inset -6px -6px 12px #ffffff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* SLIDER GROUPS */
+.slider-group {
+    margin: 20px 0;
+}
+
+.slider-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.slider-group input[type="range"] {
+    width: 100%;
+    appearance: none;
+    height: 12px;
+    border-radius: 12px;
+    background: #f3f3f3;
+    box-shadow:
+        inset 6px 6px 12px #d1d1d1,
+        inset -6px -6px 12px #ffffff;
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    box-shadow:
+        3px 3px 6px #d1d1d1,
+        -3px -3px 6px #ffffff;
+    cursor: pointer;
+}
+
+/* ADVANCED TAB */
+#command-box {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #f3f3f3;
+    box-shadow:
+        inset 6px 6px 12px #d1d1d1,
+        inset -6px -6px 12px #ffffff;
+    font-size: 16px;
+}
+
+.hint {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.7;
+}
