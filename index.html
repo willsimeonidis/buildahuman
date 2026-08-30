@@ -1,2 +1,150 @@
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build A Human</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div id="top-bar">
+        <button id="refresh-character">Refresh Character</button>
+        <button id="reset-character">Reset</button>
+        <button id="randomise-character">Randomise</button>
+
+        <div id="gender-toggle">
+            <button id="boy-btn" class="active">Boy</button>
+            <button id="girl-btn">Girl</button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-container">
+
+        <!-- LEFT SIDE: CHARACTER + CAMERA CONTROLS -->
+        <div id="character-area">
+
+            <!-- 3D MODEL HOLDER -->
+            <div id="character-container">
+                <!-- The 3D model will be injected here by JS -->
+            </div>
+
+            <!-- CAMERA CONTROLS -->
+            <div id="camera-controls">
+                <button id="cam-rotate-left">⟲</button>
+                <button id="cam-rotate-right">⟳</button>
+
+                <button id="cam-zoom-in">＋</button>
+                <button id="cam-zoom-out">－</button>
+
+                <button id="cam-pan-up">↑</button>
+                <button id="cam-pan-down">↓</button>
+                <button id="cam-pan-left">←</button>
+                <button id="cam-pan-right">→</button>
+
+                <button id="cam-reset">Reset Camera</button>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE: SETTINGS PANEL -->
+        <div id="settings-panel">
+
+            <!-- CATEGORY TABS -->
+            <div id="category-tabs">
+                <button class="tab-btn active" data-tab="body">Body</button>
+                <button class="tab-btn" data-tab="face">Face</button>
+                <button class="tab-btn" data-tab="hair">Hair</button>
+                <button class="tab-btn" data-tab="skin">Skin</button>
+                <button class="tab-btn" data-tab="clothes">Clothes</button>
+                <button class="tab-btn" data-tab="extras">Extras</button>
+                <button class="tab-btn" data-tab="creature">Creature Parts</button>
+                <button class="tab-btn" data-tab="personality">Personality</button>
+                <button class="tab-btn" data-tab="environment">Environment</button>
+                <button class="tab-btn" data-tab="animation">Animation</button>
+                <button class="tab-btn" data-tab="voice">Voice</button>
+                <button class="tab-btn" data-tab="physics">Physics</button>
+                <button class="tab-btn" data-tab="effects">Special Effects</button>
+                <button class="tab-btn" data-tab="advanced">Advanced</button>
+            </div>
+
+            <!-- CATEGORY CONTENT -->
+            <div id="category-content">
+
+                <!-- BODY TAB -->
+                <div class="tab-content active" id="body">
+                    <h2>Body Settings</h2>
+
+                    <div class="slider-group">
+                        <label>Height</label>
+                        <input type="range" min="0" max="100" value="50" id="body-height">
+                    </div>
+
+                    <div class="slider-group">
+                        <label>Body Width</label>
+                        <input type="range" min="0" max="100" value="50" id="body-width">
+                    </div>
+
+                    <div class="slider-group">
+                        <label>Arm Length</label>
+                        <input type="range" min="0" max="100" value="50" id="arm-length">
+                    </div>
+
+                    <div class="slider-group">
+                        <label>Leg Length</label>
+                        <input type="range" min="0" max="100" value="50" id="leg-length">
+                    </div>
+                </div>
+
+                <!-- FACE TAB -->
+                <div class="tab-content" id="face">
+                    <h2>Face Settings</h2>
+
+                    <div class="slider-group">
+                        <label>Eye Size</label>
+                        <input type="range" min="0" max="100" value="50" id="eye-size">
+                    </div>
+
+                    <div class="slider-group">
+                        <label>Mouth Size</label>
+                        <input type="range" min="0" max="100" value="50" id="mouth-size">
+                    </div>
+
+                    <div class="slider-group">
+                        <label>Nose Size</label>
+                        <input type="range" min="0" max="100" value="50" id="nose-size">
+                    </div>
+
+                    <div class="slider-group">
+                        <label>Emotion</label>
+                        <input type="range" min="0" max="100" value="50" id="emotion-level">
+                    </div>
+                </div>
+
+                <!-- ADVANCED TAB -->
+                <div class="tab-content" id="advanced">
+                    <h2>Advanced Controls</h2>
+                    <p>Type commands to morph the human:</p>
+
+                    <input type="text" id="command-box" placeholder="Type a command...">
+
+                    <p class="hint">Examples: “make arms longer”, “make everything exaggerated”, “normalize face”</p>
+                </div>
+
+                <!-- All other tabs will be filled in later steps -->
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
